@@ -83,7 +83,7 @@ const SUBTITLE_STATES = [
 ]
 
 const INIT_ZOOM = {
-    center: [-53.99235736195203, -27.426307807866984],
+    center: [-64, -4],
     zoom: 4.83
 }
 
@@ -94,12 +94,12 @@ var PROJECTS = {
         description: `O objetivo do presente projeto consiste na elaboração de produtos para atender as demandas constantes no Anexo E - Programa de Difusão de Produtos e Serviços de Geoinformação, do PDDMT.`,
         lotes: [
             {
-                name: 'pddmt-sub-meta-a-carta-orto-50k-pr',
-                subtitle: 'Carta Ortoimagem 1:50.000 no PR',
-                description: `Construção de 76 cartas ortoimagem na escala 1:50.000 visando atender o planejamento de operações no Lago de Itaipu para o CMS.`,
+                name: 'pit-cart-ort-50k',
+                subtitle: 'Carta Ortoimagem 1:50.000 de RR',
+                description: `Construção de 181 cartas ortoimagem na escala 1:50.000.`,
                 zoom: [
-                    [-54.94972409601194, -26.180512277006958], // southwestern corner of the bounds
-                    [-52.30027568484421, -22.31939338230858] // northeastern corner of the bounds
+                    [-67.23000000000000, -1.28000000000000], // southwestern corner of the bounds
+                    [-60.28000000000000, 5.30000000000000] // northeastern corner of the bounds
                 ],
                 legend: [
                     1,
@@ -111,8 +111,8 @@ var PROJECTS = {
                 ],
                 styles: [
                     {
-                        'id': 'pddmt-sub-meta-a-carta-orto-50k-pr-fill',
-                        'source': 'pddmt-sub-meta-a-carta-orto-50k-pr',
+                        'id': 'pit-cart-ort-50k-fill',
+                        'source': 'pit-cart-ort-50k',
                         'type': 'fill',
                         'layout': {},
                         'paint': {
@@ -120,8 +120,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'pddmt-sub-meta-a-carta-orto-50k-pr-border',
-                        'source': 'pddmt-sub-meta-a-carta-orto-50k-pr',
+                        'id': 'pit-cart-ort-50k-border',
+                        'source': 'pit-cart-ort-50k',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -130,8 +130,60 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'pddmt-sub-meta-a-carta-orto-50k-pr-text',
-                        'source': 'pddmt-sub-meta-a-carta-orto-50k-pr',
+                        'id': 'pit-cart-ort-50k-text',
+                        'source': 'pit-cart-ort-50k',
+                        "type": "symbol",
+                        "maxzoom": 10,
+						"minzoom": 7,
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pit-cart-ort-100k',
+                subtitle: 'Carta Ortoimagem 1:100.000 do AM',
+                description: `Construção de 12 cartas ortoimagem na escala 1:100.000.`,
+                zoom: [
+                    [-70.37000000000000,0.55000000000000],
+                    [-65.62000000000000,2.41000000000000]
+                ],
+                legend: [
+                    1,
+                    12,
+                    2,
+                    5,
+                    6,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pit-cart-ort-100k-fill',
+                        'source': 'pit-cart-ort-100k',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pit-cart-ort-100k-border',
+                        'source': 'pit-cart-ort-100k',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pit-cart-ort-100k-text',
+                        'source': 'pit-cart-ort-100k',
                         "type": "symbol",
                         "maxzoom": 10,
                         'layout': {
@@ -144,13 +196,19 @@ var PROJECTS = {
                     }
                 ]
             },
-            {
-                name: 'pit-cart-topo-50k',
-                subtitle: 'Carta Topográfica 1:50.000 do AC',
-                description: `Construção de 40 cartas topográficas na escala 1:50.000.`,
+			{
+                name: 'pit-cart-topo-25k',
+                subtitle: 'Carta Topográfica 1:25.000 do RO',
+                description: `Construção de 30 cartas topográficas na escala 1:25.000.`,
                 zoom: [
-                    [-72.25510000000000, -9.0006000000000000], // southwestern corner of the bounds
-                    [-70.25000600000000, -7.7500220000000000] // northeastern corner of the bounds
+                    [
+                        -66,
+                        -13
+                    ],
+                    [
+                        -63,
+                        -9
+                    ]
                 ],
                 legend: [
                     1,
@@ -162,7 +220,60 @@ var PROJECTS = {
                 ],
                 styles: [
                     {
-                        'id': 'pddmt-sub-meta-b1-carta-topo-100k-rs-fill',
+                        'id': 'pit-cart-topo-25k-fill',
+                        'source': 'pit-cart-topo-25k',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pit-cart-topo-25k-border',
+                        'source': 'pit-cart-topo-25k',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pit-cart-topo-25k-text',
+                        'source': 'pit-cart-topo-25k',
+                        "type": "symbol",
+                        "maxzoom": 10,
+						"minzoom": 7.5,
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+       
+            {
+                name: 'pit-cart-topo-50k',
+                subtitle: 'Carta Topográfica 1:50.000 do AC',
+                description: `Construção de 40 cartas topográficas na escala 1:50.000.`,
+                zoom: [
+                    [-72.00110000000000, -10.0960000000000000], // southwestern corner of the bounds
+                    [-69.83600600000000, -7.3580220000000000] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    12,
+                    2,
+                    5,
+                    6,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pit-cart-topo-50k-fill',
                         'source': 'pit-cart-topo-50k',
                         'type': 'fill',
                         'layout': {},
@@ -171,8 +282,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'pddmt-sub-meta-b1-carta-topo-100k-rs-border',
-                        'source': 'pddmt-sub-meta-b1-carta-topo-100k-rs',
+                        'id': 'pit-cart-topo-50k-border',
+                        'source': 'pit-cart-topo-50k',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -181,10 +292,11 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'pddmt-sub-meta-b1-carta-topo-100k-rs-text',
-                        'source': 'pddmt-sub-meta-b1-carta-topo-100k-rs',
+                        'id': 'pit-cart-topo-50k-text',
+                        'source': 'pit-cart-topo-50k',
                         "type": "symbol",
                         "maxzoom": 10,
+						"minzoom": 7.4,
                         'layout': {
                             'text-field': ['to-string', ['get', 'identificador']]
 
@@ -195,95 +307,39 @@ var PROJECTS = {
                     }
                 ]
             },
-            {
-                name: 'pddmt-sub-meta-b2-carta-topo-100k-pr',
-                subtitle: 'Carta Topográfica 1:100.000 do PR',
-                description: `Construção de 30 cartas topográficas na escala 1:100.000 visando atender o exercício de adestramento em Jogo de Guerra do C Av Ex na região do PR.`,
-                zoom: [
-                    [
-                        -54.84684259936897,
-                        -26.21578138464512
-                    ],
-                    [
-                        -49.46030041155424,
-                        -22.624879681924526
-                    ]
-                ],
-                legend: [
-                    1,
-                    12,
-                    2,
-                    5,
-                    6,
-                    3
-                ],
-                styles: [
-                    {
-                        'id': 'pddmt-sub-meta-b2-carta-topo-100k-pr-fill',
-                        'source': 'pddmt-sub-meta-b2-carta-topo-100k-pr',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'pddmt-sub-meta-b2-carta-topo-100k-pr-border',
-                        'source': 'pddmt-sub-meta-b2-carta-topo-100k-pr',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'pddmt-sub-meta-b2-carta-topo-100k-pr-text',
-                        'source': 'pddmt-sub-meta-b2-carta-topo-100k-pr',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
-        ]
-    },   
-    'mapeamento-interesse-da-forca': {
-        title: 'Mapeamento de Áreas de Interesse da Força Terrestre 2022',
+		]
+    },
+               
+    'suframa': {
+        title: 'Projeto Superintendência da Zona Franca de Manaus',
         executed: false,
-        description: `O objetivo do presente projeto consiste na elaboração de cartas ortoimagens em escalas
-        entre 1:25.000 e 1:250.000 de áreas de interesse da Força Terrestre pelo território nacional. A Área de
-        Suprimento Cartográfico (ASC) do 1º Centro de Geoinformação (1º CGEO) corresponde à área de
-        responsabilidade do Comando Militar do Sul (CMS), abrangendo os estados do Rio Grande do Sul, Santa Catarina
-        e Paraná. Dessa forma, o 1º CGEO será responsável por executar esse projeto em sua respectiva área de
-        responsabilidade.`,
+        description: `Termo de Execução Descentralizada (TED) entre essa Superintendência e a Diretoria de Serviço Geográfico (DSG).
+		OBJETIVO: Georreferenciamento de glebas estaduais pertencentes a esse órgão, correspondentes à área do Distrito Agropecuário
+		da SUFRAMA. Como intuito de Regularização fundiária, evitando invasões e ocupações irregulares; e assim, permitir o
+		loteamento/distribuição de parcelas e a promoção de programas de incentivo e o zoneamento econômico e ecológico local.`,
         lotes: [
             {
-                name: 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis',
-                subtitle: 'Carta Topográfica 1:25.000 de Florianópolis',
-                description: `Construção de 09 cartas topográficas na escala 1:25.000 visando atender a atualização das capitais do ASC.`,
+                name: 'suframa',
+                subtitle: 'Glebas (a)',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
+`,
                 zoom: [
-                    [-48.82809677372772, -28.05547382461215], // southwestern corner of the bounds
-                    [-48.046903497479974, -27.1945079332596] // northeastern corner of the bounds
+                    [-60.793, -3.124], // southwestern corner of the bounds
+                    [-58.891, -1.707] // northeastern corner of the bounds
                 ],
                 legend: [
                     1,
+                    16,
+                    13,
                     12,
-                    2,
-                    5,
-                    6,
+                    15,
                     3
                 ],
                 styles: [
                     {
-                        'id': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis-fill',
-                        'source': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis',
+                        'id': 'suframa-fill',
+                        'source': 'suframa',
                         'type': 'fill',
                         'layout': {},
                         'paint': {
@@ -291,8 +347,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis-border',
-                        'source': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis',
+                        'id': 'suframa-border',
+                        'source': 'suframa',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -301,11 +357,10 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis-text',
-                        'source': 'mapintfter-sub-meta-a1-carta-topo-25k-florianopolis',
+                        'id': 'suframa-text',
+                        'source': 'suframa',
                         "type": "symbol",
                         "maxzoom": 10,
-                        "minzoom": 8.86,
                         'layout': {
                             'text-field': ['to-string', ['get', 'identificador']]
 
@@ -316,255 +371,37 @@ var PROJECTS = {
                     }
                 ]
             },
-            {
-                name: 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana',
-                subtitle: 'Carta Topográfica 1:25.000 de Uruguaiana',
-                description: `Construção de 02 cartas topográficas na escala 1:25.000 visando atender a atualização das campos de instrução das ASC.`,
-                zoom: [
-                    [-57.33202394228996, -30.055420752836497], // southwestern corner of the bounds
-                    [-56.79297573646644, -29.444567158256913] // northeastern corner of the bounds
-                ],
-                legend: [
-                    1,
-                    12,
-                    2,
-                    5,
-                    6,
-                    3
-                ],
-                styles: [
-                    {
-                        'id': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana-fill',
-                        'source': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana-border',
-                        'source': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana-text',
-                        'source': 'mapintfter-sub-meta-a2-carta-topo-25k-uruguaiana',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 8.86,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'mapintfter-sub-meta-a3-carta-topo-25k-ms',
-                subtitle: 'Carta Topográfica 1:25.000 do Mato Grosso do Sul',
-                description: `Construção de 64 cartas topográficas na escala 1:25.000 na região da fronteira do Mato Grosso do Sul.`,
-                zoom: [
-                    [-58.192352538599025, -21.18063783765893],
-                    [-56.80764718063957, -19.81933644861341]
-                ],
-                legend: [
-                    1,
-                    12,
-                    2,
-                    5,
-                    6,
-                    3
-                ],
-                styles: [
-                    {
-                        'id': 'mapintfter-sub-meta-a3-carta-topo-25k-ms-fill',
-                        'source': 'mapintfter-sub-meta-a3-carta-topo-25k-ms',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-a3-carta-topo-25k-ms-border',
-                        'source': 'mapintfter-sub-meta-a3-carta-topo-25k-ms',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-a3-carta-topo-25k-ms-text',
-                        'source': 'mapintfter-sub-meta-a3-carta-topo-25k-ms',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.34,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'mapintfter-sub-meta-b-carta-topo-50k-rr',
-                subtitle: 'Carta Topográfica 1:50.000 de Roraima',
-                description: `Construção de 22 cartas topográficas na escala 1:50.000 na região da fronteira de Roraima.`,
-                zoom: [
-                    [
-                        -63.93490169478686,
-                        2.3460501179199724
-                    ],
-                    [
-                        -58.48288600488843,
-                        6.32638916302372
-                    ]
-                ],
-                legend: [
-                    1,
-                    12,
-                    2,
-                    5,
-                    6,
-                    3
-                ],
-                styles: [
-                    {
-                        'id': 'mapintfter-sub-meta-b-carta-topo-50k-rr-fill',
-                        'source': 'mapintfter-sub-meta-b-carta-topo-50k-rr',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-b-carta-topo-50k-rr-border',
-                        'source': 'mapintfter-sub-meta-b-carta-topo-50k-rr',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-b-carta-topo-50k-rr-text',
-                        'source': 'mapintfter-sub-meta-b-carta-topo-50k-rr',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 6.03,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc',
-                subtitle: 'Generalização Carta Topográfica 1:100.000',
-                description: `O objetivo do presente projeto consiste em realizar a Generalização Cartográfica
-                na escala 1:100.000 de produtos na região de Santa Catarina e Rio
-                Grande do Sul, para gerar 12 cartas topográficas na escala 1:100.000.`,
-                zoom: [
-                    [-52.209372285465335, -31.180376012441414],
-                    [-49.79062798683473, -26.319489869099446]
-                ],
-                legend: [
-                    1,
-                    9,
-                    5,
-                    6,
-                    3
-                ],
-                styles: [
-                    {
-                        'id': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc-fill',
-                        'source': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc-border',
-                        'source': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc-text',
-                        'source': 'mapintfter-sub-meta-c-carta-topo-100k-rs-sc',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 4.56,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
         ]
     },
-    'rio-grande-do-sul': {
-        title: 'Projeto de Mapeamento do Estado do Rio Grande do Sul',
-        executed: true,
-        description: `O objetivo principal do projeto é a elaboração de 174 (cento e setenta e quatro) cartas
-        topográficas na escala 1:25.000, e seus respectivos insumos geoespaciais (ortoimagens, modelos digitais
-        de elevação e dados geoespaciais vetoriais), correspondentes à RF 1, compreendendo Porto Alegre,
-        Região Metropolitana e municípios adjacentes, identificadas segundo a nomenclatura utilizada no Mapa-Índice
-        (MI), de acordo com as Normas e Especificações Técnicas previstas para a Infraestrutura Nacional de
-        Dados Espaciais (INDE).`,
+	    'amapaiii': {
+        title: 'Projeto Amapá III',
+        executed: false,
+        description: `Termo de Convênio Nº 01/2018 - SEPLAN/AP - 4º CGEO,  firmado com o Estado do Amapá.
+		OBJETIVO: Execução do georreferenciamento de Glebas Federais e suas áreas de exclusão, para que sejam
+		repassadas ao Estado e assim possibilite a regularização fundiária.`,
         lotes: [
             {
-                name: 'conv-rs-carta-topo-25k-rs',
-                subtitle: '1:25.000',
-                description: `A elaboração das cartas topográficas foi executada em 5 (cinco) lotes de produção
-                cartográfica. Além da base cartográfica digital contínua foram entregues as imagens brutas, os modelos
-                digitais de superfície, os modelos digitais do terreno e as ortoimagens de cada carta produzida, além da carta
-                topográfica em formato matricial.`,
+                name: 'amapa-previsto',
+                subtitle: 'Glebas (a)',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
+`,
                 zoom: [
-                    [
-                        -53.08078039276313,
-                        -31.599938879777334
-                    ],
-                    [
-                        -49.102955546684086,
-                        -29.08630601676895
-                    ]
+                    [-52.049, 1.569], // southwestern corner of the bounds
+                    [-50.480, 2.741] // northeastern corner of the bounds
                 ],
-                legend: [3],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
                 styles: [
                     {
-                        'id': 'conv-rs-carta-topo-25k-rs-fill',
-                        'source': 'conv-rs-carta-topo-25k-rs',
+                        'id': 'amapa-previsto-fill',
+                        'source': 'amapa-previsto',
                         'type': 'fill',
                         'layout': {},
                         'paint': {
@@ -572,8 +409,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'conv-rs-carta-topo-25k-rs-border',
-                        'source': 'conv-rs-carta-topo-25k-rs',
+                        'id': 'amapa-previsto-border',
+                        'source': 'amapa-previsto',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -582,11 +419,10 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'conv-rs-carta-topo-25k-rs-text',
-                        'source': 'conv-rs-carta-topo-25k-rs',
+                        'id': 'amapa-previsto-text',
+                        'source': 'amapa-previsto',
                         "type": "symbol",
                         "maxzoom": 10,
-                        "minzoom": 8.89,
                         'layout': {
                             'text-field': ['to-string', ['get', 'identificador']]
 
@@ -597,25 +433,37 @@ var PROJECTS = {
                     }
                 ]
             },
+        ]
+    },
+		'dnit': {
+        title: 'Projeto Unidades de Conservação SEDAM-RO (Antigo Prj DNIT)',
+        executed: false,
+        description: `OBJETIVO: Execução do Georreferenciamento de 05 Unidades De Conservação Estaduais (UC)
+		gerenciadas pela Secretaria Estadual do Desenvolvimento Ambiental (SEDAM-RO) com o intuito de Regularização fundiária,
+		evitando invasões e ocupações irregulares das áreas de conservação/proteção ambiental.`,
+        lotes: [
             {
-                name: 'conv-rs-carta-topo-50k-rs',
-                subtitle: '1:50.000',
-                description: `Produção de cartas topográficas 1:50.000 por processo de generalização`,
+                name: 'dnit',
+                subtitle: 'Unidades De Conservação Estaduais (UC) ',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
+`,
                 zoom: [
-                    [
-                        -53.07164719034553,
-                        -31.604238517208366
-                    ],
-                    [
-                        -49.139097694440665,
-                        -29.11968658972779
-                    ]
+                    [-65.352, -9.870], // southwestern corner of the bounds
+                    [-61.184, -7.563] // northeastern corner of the bounds
                 ],
-                legend: [3],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
                 styles: [
                     {
-                        'id': 'conv-rs-carta-topo-50k-rs-fill',
-                        'source': 'conv-rs-carta-topo-50k-rs',
+                        'id': 'dnit-fill',
+                        'source': 'dnit',
                         'type': 'fill',
                         'layout': {},
                         'paint': {
@@ -623,8 +471,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'conv-rs-carta-topo-50k-rs-border',
-                        'source': 'conv-rs-carta-topo-50k-rs',
+                        'id': 'dnit-border',
+                        'source': 'dnit',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -633,11 +481,10 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'conv-rs-carta-topo-50k-rs-text',
-                        'source': 'conv-rs-carta-topo-50k-rs',
+                        'id': 'dnit-text',
+                        'source': 'dnit',
                         "type": "symbol",
                         "maxzoom": 10,
-                        "minzoom": 8.89,
                         'layout': {
                             'text-field': ['to-string', ['get', 'identificador']]
 
@@ -647,34 +494,39 @@ var PROJECTS = {
                         }
                     }
                 ]
-            }
+            },
         ]
     },
-    'santa-catarina': {
-        title: 'Mapeamento de Áreas de Interesse da Força Terrestre - Santa Catarina',
-        executed: true,
-        description: `Execução de mapeamento topográfico, totalizando 42 e 168 folhas nas escalas
-        1:50.000 e 1:25.000, respectivamente, da Área de Suprimento Cartográfico (ASC) do 1º
-        Centro de Geoinformação.`,
+		'levpatr': {
+        title: 'Levantamento de Áreas Patrimoniais',
+        executed: false,
+        description: `OBJETIVO: Execução do Levantamento Topográfico Planimétrico para atualização de PDOM e
+		Controle Patrimonial de Imóveis da 12ª RM/CMA, possibilitando um maior controle dos imóveis e áreas pertencentes
+		à união e sob a responsabilidade das Organizações Militares pertencentes ao CMA, evitando assim, invasões e ocupações
+		irregulares e áreas militares.`,
         lotes: [
             {
-                name: 'santa-catarina-25k',
-                subtitle: 'Escala 1:25.000',
+                name: 'humaita',
+                subtitle: 'Áreas (a)',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
+`,
                 zoom: [
-                    [
-                        -52.5586923820878,
-                        -28.700997713134676
-                    ],
-                    [
-                        -48.54318247763669,
-                        -26.090528839826753
-                    ]
+                    [-63.4156, -7.6609], // southwestern corner of the bounds
+                    [-62.8790, -7.2371] // northeastern corner of the bounds
                 ],
-                legend: [3],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
                 styles: [
                     {
-                        'id': 'santa-catarina-25k-fill',
-                        'source': 'santa-catarina-25k',
+                        'id': 'humaita-fill',
+                        'source': 'humaita',
                         'type': 'fill',
                         'layout': {},
                         'paint': {
@@ -682,8 +534,8 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'santa-catarina-25k-border',
-                        'source': 'santa-catarina-25k',
+                        'id': 'humaita-border',
+                        'source': 'humaita',
                         'type': 'line',
                         'layout': {},
                         'paint': {
@@ -692,8 +544,841 @@ var PROJECTS = {
                         }
                     },
                     {
-                        'id': 'santa-catarina-25k-text',
-                        'source': 'santa-catarina-25k',
+                        'id': 'humaita-text',
+                        'source': 'humaita',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+        ]
+    },
+	'pbzpa': {
+        title: ' Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
+        executed: false,
+        description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
+		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
+		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
+        lotes: [
+            {
+                name: '4pef-7bis',
+                subtitle: 'SWUQ – Pista de pouso do 4º PEF do 7º BIS (Surucucu – RR)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA.`,
+                zoom: [
+                    [-63.66385, 2.82191], // southwestern corner of the bounds
+                    [-63.6276, 2.8487] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': '4pef-7bis-fill',
+                        'source': '4pef-7bis',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': '4pef-7bis-border',
+                        'source': '4pef-7bis',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': '4pef-7bis-text',
+                        'source': '4pef-7bis',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: '3pef-8bis',
+                subtitle: 'SWJP – Pista de pouso do 3º PEF do 8º BIS (Vila Bittencourt – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA.`,
+                zoom: [
+                    [-69.4484, -1.4227], // southwestern corner of the bounds
+                    [-69.4006, -1.3787] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': '3pef-8bis-fill',
+                        'source': '3pef-8bis',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': '3pef-8bis-border',
+                        'source': '3pef-8bis',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': '3pef-8bis-text',
+                        'source': '3pef-8bis',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: '1pef-5bis',
+                subtitle: 'SBYA – Pista de pouso do 1º PEF do 5º BIS (Iauaretê – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA.`,
+                zoom: [
+                    [-69.2250, 0.5720], // southwestern corner of the bounds
+                    [-69.1482, 0.6401] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': '1pef-5bis-fill',
+                        'source': '1pef-5bis',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': '1pef-5bis-border',
+                        'source': '1pef-5bis',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': '1pef-5bis-text',
+                        'source': '1pef-5bis',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+        ]
+    },
+
+    'pbzpa-fin': {
+        title: 'Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
+        executed: true,
+        description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
+		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
+		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
+        lotes: [
+            {
+                name: 'pbzpa-ipiranga',
+                subtitle: 'SWII – Pista de pouso do 2º PEF do 8º BIS (Ipiranga – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-69.70867, -2.95269], // southwestern corner of the bounds
+                    [-69.68255, -2.92871] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-ipiranga-fill',
+                        'source': 'pbzpa-ipiranga',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-ipiranga-border',
+                        'source': 'pbzpa-ipiranga',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-ipiranga-text',
+                        'source': 'pbzpa-ipiranga',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: '5pef-7bis',
+                subtitle: 'SWBV – Pista de pouso do 5º PEF do 7º BIS (Auaris – RR)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-64.50719, 3.99450], // southwestern corner of the bounds
+                    [-64.47784, 4.01280] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': '5pef-7bis-fill',
+                        'source': '5pef-7bis',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': '5pef-7bis-border',
+                        'source': '5pef-7bis',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': '5pef-7bis-text',
+                        'source': '5pef-7bis',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-maturaca',
+                subtitle: 'SWMK – Pista de pouso do 5º PEF do 5º BIS (Maturacá – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-66.2275, 0.5291], // southwestern corner of the bounds
+                    [-66.0037, 0.7276] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-maturaca-fill',
+                        'source': 'pbzpa-maturaca',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-maturaca-border',
+                        'source': 'pbzpa-maturaca',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-maturaca-text',
+                        'source': 'pbzpa-maturaca',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-cucui',
+                subtitle: 'SWKU – Pista de pouso do 4º PEF do 5º BIS (Cucuí – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-66.85471, 1.10832], // southwestern corner of the bounds
+                    [-66.82605, 1.13383] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-cucui-fill',
+                        'source': 'pbzpa-cucui',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-cucui-border',
+                        'source': 'pbzpa-cucui',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-cucui-text',
+                        'source': 'pbzpa-cucui',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-sao-joaquim',
+                subtitle: 'SWSQ – Pista de pouso do 3º PEF do 5º BIS (São Joaquim – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-69.40922, 1.68582], // southwestern corner of the bounds
+                    [-69.36270, 1.71742] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-sao-joaquim-fill',
+                        'source': 'pbzpa-sao-joaquim',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-sao-joaquim-border',
+                        'source': 'pbzpa-sao-joaquim',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-sao-joaquim-text',
+                        'source': 'pbzpa-sao-joaquim',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-querari',
+                subtitle: 'SWQE – Pista de pouso do 2º PEF do 5º BIS (Querari – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-69.85282, 1.07401], // southwestern corner of the bounds
+                    [-69.81713, 1.10587] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-querari-fill',
+                        'source': 'pbzpa-querari',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-querari-border',
+                        'source': 'pbzpa-querari',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-querari-text',
+                        'source': 'pbzpa-querari',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-pari-cachoeira',
+                subtitle: 'SWPC – Pista de pouso do 6º PEF do 5º BIS (Pari Cachoeira – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-69.80850, 0.25445], // southwestern corner of the bounds
+                    [-69.77955, 0.27738] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-pari-cachoeira-fill',
+                        'source': 'pbzpa-pari-cachoeira',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-pari-cachoeira-border',
+                        'source': 'pbzpa-pari-cachoeira',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-pari-cachoeira-text',
+                        'source': 'pbzpa-pari-cachoeira',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-estirao-do-equador',
+                subtitle: 'SWEE – Pista de pouso do 4º PEF do 8º BIS (Estirão do Equador – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-71.5853, -4.5486], // southwestern corner of the bounds
+                    [-71.5385, -4.5030] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-estirao-do-equador-fill',
+                        'source': 'pbzpa-estirao-do-equador',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-estirao-do-equador-border',
+                        'source': 'pbzpa-estirao-do-equador',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-estirao-do-equador-text',
+                        'source': 'pbzpa-estirao-do-equador',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-palmeiras-do-javari',
+                subtitle: 'SWJV – Pista de pouso do 1º PEF do 8º BIS (Palmeiras do Javari – AM)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-72.82215, -5.13764], // southwestern corner of the bounds
+                    [-72.79624, -5.11445] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-palmeiras-do-javari-fill',
+                        'source': 'pbzpa-palmeiras-do-javari',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-palmeiras-do-javari-border',
+                        'source': 'pbzpa-palmeiras-do-javari',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-palmeiras-do-javari-text',
+                        'source': 'pbzpa-palmeiras-do-javari',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-marechal-thaumaturgo',
+                subtitle: 'SSMH – Pista de pouso do DEF do 61º BIS (Marechal Thaumaturgo – AC)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-72.79752, -8.97440], // southwestern corner of the bounds
+                    [-72.76199, -8.94334] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-marechal-thaumaturgo-fill',
+                        'source': 'pbzpa-marechal-thaumaturgo',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-marechal-thaumaturgo-border',
+                        'source': 'pbzpa-marechal-thaumaturgo',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-marechal-thaumaturgo-text',
+                        'source': 'pbzpa-marechal-thaumaturgo',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-santa-rosa-do-purus',
+                subtitle: 'SSRA – Pista de pouso do 4º PEF do 4º BIS (Santa Rosa do Purus – AC)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-70.5726, -9.5218], // southwestern corner of the bounds
+                    [-70.3838, -9.3550] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-santa-rosa-do-purus-fill',
+                        'source': 'pbzpa-santa-rosa-do-purus',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-santa-rosa-do-purus-border',
+                        'source': 'pbzpa-santa-rosa-do-purus',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-santa-rosa-do-purus-text',
+                        'source': 'pbzpa-santa-rosa-do-purus',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'pbzpa-pacaraima',
+                subtitle: 'ZZZZ – Pista de pouso do 3º PEF do 7º BIS (Pacaraima – RR)',
+                description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
+                zoom: [
+                    [-61.17600, 4.48017], // southwestern corner of the bounds
+                    [-61.14412, 4.50220] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'pbzpa-pacaraima-fill',
+                        'source': 'pbzpa-pacaraima',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-pacaraima-border',
+                        'source': 'pbzpa-pacaraima',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'pbzpa-pacaraima-text',
+                        'source': 'pbzpa-pacaraima',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+            
+        ]
+    },
+    'amapaiii-fin': {
+        title: 'Projeto Amapá III',
+        executed: true,
+        description: `Termo de Convênio Nº 01/2018 - SEPLAN/AP - 4º CGEO,  firmado com o Estado do Amapá. OBJETIVO: Execução do
+		georreferenciamento de Glebas Federias e suas áreas de exclusão, para que sejam repassadas ao Estado e assim possibilite a regularização fundiária.`,
+        lotes: [
+            {
+                name: 'amapa-pronto',
+                subtitle: 'Glebas (a)',
+				description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
+                zoom: [
+                    [
+                        -52.456, -0.679
+                    ],
+                    [
+                        -49.331, 2.258
+                    ]
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'amapa-pronto-fill',
+                        'source': 'amapa-pronto',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'amapa-pronto-border',
+                        'source': 'amapa-pronto',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'amapa-pronto-text',
+                        'source': 'amapa-pronto',
                         "type": "symbol",
                         "maxzoom": 10,
                         "minzoom": 9.01,
@@ -706,428 +1391,7 @@ var PROJECTS = {
                         }
                     }
                 ]
-            },
-            {
-                name: 'santa-catarina-50k',
-                subtitle: 'Escala 1:50.000',
-                zoom: [
-                    [-52.454258275555226, -28.680443365430413],
-                    [-49.79574195439098, -26.069483443263103]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'santa-catarina-50k-fill',
-                        'source': 'santa-catarina-50k',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'santa-catarina-50k-border',
-                        'source': 'santa-catarina-50k',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'santa-catarina-50k-text',
-                        'source': 'santa-catarina-50k',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.4,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
             }
         ]
     },
-    'uraricoera': {
-        title: 'Exercício Uraricoera',
-        executed: true,
-        description: `O objetivo do presente projeto consiste na elaboração de 48 cartas topográficas na
-        escala
-        1:50.000
-        distribuídas no estado de Roraima visando atender demanda do COTER relativa a
-        realização de
-        exercícios
-        de Problemas Militares Simulados.`,
-        lotes: [
-            {
-                name: 'uraricoera',
-                subtitle: '',
-                zoom: [
-                    [-61.68024984824885, 1.3191292999480237],
-                    [-60.31974985130867, 4.9308586451198915]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'uraricoera-fill',
-                        'source': 'uraricoera',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'uraricoera-border',
-                        'source': 'uraricoera',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'uraricoera-text',
-                        'source': 'uraricoera',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.26,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    'sisfron-17rcmec':{
-        title: 'SISFRON - 17 RC Mec',
-        executed: true,
-        description: `Execução de mapeamento topográfico, nas escalas 1:25.000, 1:50.000 e 1:100.000, totalizando 59 cartas topográficas e seus dados
-        vetoriais na região de fronteira do Paraná.`,
-        lotes: [
-            {
-                name: 'sisfron-17rcmec-carta-topo-25k-pr',
-                subtitle: `1:25.000`,
-                description: `Execução de mapeamento topográfico na escalas 1:25.000 de 44 cartas topográficas e seus dados
-                vetoriais na região de fronteira do Paraná.`,
-                zoom: [
-                    [-54.69732378130477, -24.6805561899923],
-                    [-53.30267614980163, -22.81940267434254]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-25k-pr-fill',
-                        'source': 'sisfron-17rcmec-carta-topo-25k-pr',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-25k-pr-border',
-                        'source': 'sisfron-17rcmec-carta-topo-25k-pr',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-25k-pr-text',
-                        'source': 'sisfron-17rcmec-carta-topo-25k-pr',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 8.89,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'sisfron-17rcmec-carta-topo-50k-pr',
-                subtitle: `1:50.000`,
-                description: `Execução de mapeamento topográfico na escalas 1:50.000 de 12 cartas topográficas e seus dados
-                vetoriais na região de fronteira do Paraná.`,
-                zoom: [
-                    [-54.69732378130477, -24.6805561899923],
-                    [-53.30267614980163, -22.81940267434254]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-50k-pr-fill',
-                        'source': 'sisfron-17rcmec-carta-topo-50k-pr',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-50k-pr-border',
-                        'source': 'sisfron-17rcmec-carta-topo-50k-pr',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-50k-pr-text',
-                        'source': 'sisfron-17rcmec-carta-topo-50k-pr',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.89,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'sisfron-17rcmec-carta-topo-100k-pr',
-                subtitle: `1:100.000`,
-                description: `Execução de mapeamento topográfico na escalas 1:100.000 de 03 cartas topográficas e seus dados
-                vetoriais na região de fronteira do Paraná.`,
-                zoom: [
-                    [-54.69732378130477, -24.6805561899923],
-                    [-53.30267614980163, -22.81940267434254]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-100k-pr-fill',
-                        'source': 'sisfron-17rcmec-carta-topo-100k-pr',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-100k-pr-border',
-                        'source': 'sisfron-17rcmec-carta-topo-100k-pr',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'sisfron-17rcmec-carta-topo-100k-pr-text',
-                        'source': 'sisfron-17rcmec-carta-topo-100k-pr',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.89,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    'campo-instrucao': {
-        title: 'Mapeamento de Áreas de Interesse da Força Terrestre - Campos de Instrução',
-        executed: true,
-        description: `Execução de mapeamento topográfico, totalizando 24 folhas na escala 1:25.000,
-        referentes à 5 (cinco) Campos de Instrução (CIB, CISM, CIR, CIMH e CIBSB) da Área de
-        Suprimento Cartográfico (ASC) do 1º Centro de Geoinformação e que estão contidos na
-        área de responsabilidade do Comando Militar do Sul.`,
-        lotes: [
-            {
-                name: 'campo-instrucao-25k',
-                subtitle: 'Escala 1:25.000',
-                zoom: [
-                    [
-                        -56.18915089919898,
-                        -31.213375905552738
-                    ],
-                    [
-                        -48.04916183186424,
-                        -25.982504667730154
-                    ]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'campo-instrucao-25k-fill',
-                        'source': 'campo-instrucao-25k',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'campo-instrucao-25k-border',
-                        'source': 'campo-instrucao-25k',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'campo-instrucao-25k-text',
-                        'source': 'campo-instrucao-25k',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 8.86,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'campo-instrucao-50k',
-                subtitle: 'Escala 1:50.000',
-                zoom: [
-                    [
-                        -56.66123922488663,
-                        -31.498994346004366
-                    ],
-                    [
-                        -47.59830566095303,
-                        -25.675197661624992
-                    ]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'campo-instrucao-50k-fill',
-                        'source': 'campo-instrucao-50k',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'campo-instrucao-50k-border',
-                        'source': 'campo-instrucao-50k',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'campo-instrucao-50k-text',
-                        'source': 'campo-instrucao-50k',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 9.01,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    'radiografia': {
-        title: 'Projeto Radiografia da Amazônia',
-        executed: true,
-        description: `O 1º CGEO foi responsável pela aquisição dos dados geoespaciais vetoriais
-        (altimetria,
-        hidrografia e
-        planimetria) e edição de cartas topográficas, com base nos dados geoespaciais de
-        vegetação
-        obtidos
-        pelo
-        2º CGEO (Brasília-DF), da área já imageada do projeto.`,
-        lotes: [
-            {
-                name: 'radiografia-am',
-                subtitle: '',
-                zoom: [
-                    [
-                        -75.4914065314648,
-                        -13.074583626077953
-                    ],
-                    [
-                        -45.8294395582202,
-                        8.500903062364785
-                    ]
-                ],
-                legend: [3],
-                styles: [
-                    {
-                        'id': 'radiografia-am-fill',
-                        'source': 'radiografia-am',
-                        'type': 'fill',
-                        'layout': {},
-                        'paint': {
-                            'fill-opacity': 0.9
-                        }
-                    },
-                    {
-                        'id': 'radiografia-am-border',
-                        'source': 'radiografia-am',
-                        'type': 'line',
-                        'layout': {},
-                        'paint': {
-                            'line-color': '#050505',
-                            'line-width': 0.5
-                        }
-                    },
-                    {
-                        'id': 'radiografia-am-text',
-                        'source': 'radiografia-am',
-                        "type": "symbol",
-                        "maxzoom": 10,
-                        "minzoom": 7.4,
-                        'layout': {
-                            'text-field': ['to-string', ['get', 'identificador']]
-
-                        },
-                        'paint': {
-
-                        }
-                    }
-                ]
-            }
-        ]
-    }
 }
