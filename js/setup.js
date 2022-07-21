@@ -321,9 +321,8 @@ var PROJECTS = {
             {
                 name: 'suframa',
                 subtitle: 'Glebas (a)',
-                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
-				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
-`,
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
                     [-60.793, -3.124], // southwestern corner of the bounds
                     [-58.891, -1.707] // northeastern corner of the bounds
@@ -383,9 +382,8 @@ var PROJECTS = {
             {
                 name: 'amapa-previsto',
                 subtitle: 'Glebas (a)',
-                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
-				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
-`,
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
                     [-52.049, 1.569], // southwestern corner of the bounds
                     [-50.480, 2.741] // northeastern corner of the bounds
@@ -445,9 +443,8 @@ var PROJECTS = {
             {
                 name: 'dnit',
                 subtitle: 'Unidades De Conservação Estaduais (UC) ',
-                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
-				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
-`,
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
                     [-65.352, -9.870], // southwestern corner of the bounds
                     [-61.184, -7.563] // northeastern corner of the bounds
@@ -508,9 +505,8 @@ var PROJECTS = {
             {
                 name: 'humaita',
                 subtitle: 'Áreas (a)',
-                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
-				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).
-`,
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
                     [-63.4156, -7.6609], // southwestern corner of the bounds
                     [-62.8790, -7.2371] // northeastern corner of the bounds
@@ -1338,7 +1334,7 @@ var PROJECTS = {
             {
                 name: 'amapa-pronto',
                 subtitle: 'Glebas (a)',
-				description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculo das Poligonais e áreas, Plantas,
+				description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
 				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
                     [
