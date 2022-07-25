@@ -254,8 +254,7 @@ var PROJECTS = {
                     }
                 ]
             },
-       
-            {
+			{
                 name: 'pit-cart-topo-50k',
                 subtitle: 'Carta Topográfica 1:50.000 do AC',
                 description: `Construção de 40 cartas topográficas na escala 1:50.000.`,
@@ -294,6 +293,162 @@ var PROJECTS = {
                     {
                         'id': 'pit-cart-topo-50k-text',
                         'source': 'pit-cart-topo-50k',
+                        "type": "symbol",
+                        "maxzoom": 10,
+						"minzoom": 7.4,
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'mdt',
+                subtitle: 'MDS',
+				description: `Construção de 930 cartas Ortoimagem na escala 1:25.000.`,
+                zoom: [
+                    [-60.095, -3.314], // southwestern corner of the bounds
+                    [-58.895, -2.340] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    12,
+                    2,
+                    5,
+                    6,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'mdt-fill',
+                        'source': 'mdt',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'mdt-border',
+                        'source': 'mdt',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'mdt-text',
+                        'source': 'mdt',
+                        "type": "symbol",
+                        "maxzoom": 10,
+						"minzoom": 7.4,
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'ortoimagens-25k',
+                subtitle: 'Ortoimagem',
+                description: `Construção de 930 cartas Ortoimagem na escala 1:25.000.`,
+                zoom: [
+                    [-69.5300, -3.7200], // southwestern corner of the bounds
+                    [-57.0900, 6.8500] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    12,
+                    2,
+                    5,
+                    6,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'ortoimagens-25k-fill',
+                        'source': 'ortoimagens-25k',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'ortoimagens-25k-border',
+                        'source': 'ortoimagens-25k',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'ortoimagens-25k-text',
+                        'source': 'ortoimagens-25k',
+                        "type": "symbol",
+                        "maxzoom": 10,
+						"minzoom": 7.4,
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+            {
+                name: 'mapa-tematico',
+                subtitle: 'Mapa Temático',
+                description: `Construção de 40 cartas topográficas na escala 1:50.000.`,
+                zoom: [
+                    [-60.1928, -3.1491], // southwestern corner of the bounds
+                    [-59.8602, -2.8363] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    12,
+                    2,
+                    5,
+                    6,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'mapa-tematico-fill',
+                        'source': 'mapa-tematico',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'mapa-tematico-border',
+                        'source': 'mapa-tematico',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'mapa-tematico-text',
+                        'source': 'mapa-tematico',
                         "type": "symbol",
                         "maxzoom": 10,
 						"minzoom": 7.4,
