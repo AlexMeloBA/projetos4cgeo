@@ -553,6 +553,109 @@ var PROJECTS = {
                     }
                 ]
             },
+			{
+                name: 'surucucu',
+                subtitle: 'Área do 4º PEF do C FRON RR / 7º BIS em Surucucu - RR',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
+                zoom: [
+                    [-63.66385, 2.82191], // southwestern corner of the bounds
+                    [-63.6276, 2.8487] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'surucucu-fill',
+                        'source': 'surucucu',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'surucucu-border',
+                        'source': 'surucucu',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'surucucu-text',
+                        'source': 'surucucu',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+			{
+                name: 'auaris',
+                subtitle: 'Área do 5º PEF do C FRON RR / 7º BIS em Auaris - RR',
+                description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
+				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
+                zoom: [
+                    [-64.50719, 3.99450], // southwestern corner of the bounds
+                    [-64.47784, 4.01280] // northeastern corner of the bounds
+                ],
+                legend: [
+                    1,
+                    16,
+                    13,
+                    12,
+                    15,
+                    3
+                ],
+                styles: [
+                    {
+                        'id': 'auaris-fill',
+                        'source': 'auaris',
+                        'type': 'fill',
+                        'layout': {},
+                        'paint': {
+                            'fill-opacity': 0.9
+                        }
+                    },
+                    {
+                        'id': 'auaris-border',
+                        'source': 'auaris',
+                        'type': 'line',
+                        'layout': {},
+                        'paint': {
+                            'line-color': '#050505',
+                            'line-width': 0.5
+                        }
+                    },
+                    {
+                        'id': 'auaris-text',
+                        'source': 'auaris',
+                        "type": "symbol",
+                        'layout': {
+                            'text-field': ['to-string', ['get', 'identificador']]
+
+                        },
+                        'paint': {
+
+                        }
+                    }
+                ]
+            },
+		
         ]
     },
 	'pbzpa': {
@@ -612,7 +715,18 @@ var PROJECTS = {
                     }
                 ]
             },
-			{
+			
+        ]
+    },
+
+    'pbzpa-fin': {
+        title: 'Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
+        executed: true,
+        description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
+		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
+		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
+        lotes: [
+            {
                 name: '3pef-8bis',
                 subtitle: 'SWJP – Pista de pouso do 3º PEF do 8º BIS (Vila Bittencourt – AM)',
                 description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA.`,
@@ -712,17 +826,7 @@ var PROJECTS = {
                     }
                 ]
             },
-        ]
-    },
-
-    'pbzpa-fin': {
-        title: 'Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
-        executed: true,
-        description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
-		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
-		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
-        lotes: [
-            {
+			{
                 name: 'pbzpa-ipiranga',
                 subtitle: 'SWII – Pista de pouso do 2º PEF do 8º BIS (Ipiranga – AM)',
                 description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA`,
