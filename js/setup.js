@@ -309,7 +309,7 @@ var PROJECTS = {
 			{
                 name: 'mdt',
                 subtitle: 'MDS',
-				description: `Construção de 930 cartas Ortoimagem na escala 1:25.000.`,
+				description: `Construção de 2 Modelos Digitais de Superficie.`,
                 zoom: [
                     [-60.095, -3.314], // southwestern corner of the bounds
                     [-58.895, -2.340] // northeastern corner of the bounds
@@ -413,7 +413,7 @@ var PROJECTS = {
             {
                 name: 'mapa-tematico',
                 subtitle: 'Mapa Temático',
-                description: `Construção de 40 cartas topográficas na escala 1:50.000.`,
+                description: `Construção de 11 Mapas Temáticos de Áreas de Manaus-AM.`,
                 zoom: [
                     [-60.1928, -3.1491], // southwestern corner of the bounds
                     [-59.8602, -2.8363] // northeastern corner of the bounds
