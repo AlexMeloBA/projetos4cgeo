@@ -589,7 +589,7 @@ var PROJECTS = {
         ]
     },
 		'dnit': {
-        title: 'Projeto Unidades de Conservação SEDAM-RO (Antigo Prj DNIT)',
+        title: 'Projeto Unidades de Conservação SEDAM-RO (Antigo Pjt DNIT)',
         executed: false,
         description: `OBJETIVO: Execução do Georreferenciamento de 05 Unidades De Conservação Estaduais (UC)
 		gerenciadas pela Secretaria Estadual do Desenvolvimento Ambiental (SEDAM-RO) com o intuito de Regularização fundiária,
@@ -659,7 +659,7 @@ var PROJECTS = {
         lotes: [
             {
                 name: 'humaita',
-                subtitle: 'Áreas (a)',
+                subtitle: 'Áreas do 54° BIS em Humaitá-AM',
                 description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
 				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
