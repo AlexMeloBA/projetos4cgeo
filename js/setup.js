@@ -361,7 +361,7 @@ var PROJECTS = {
 			{
                 name: 'ortoimagens-25k',
                 subtitle: 'Ortoimagem',
-                description: `Construção de 930 cartas Ortoimagem na escala 1:25.000.`,
+                description: `Construção de 930 cartas Ortoimagem na escala 1:25.000 do AM e RR.`,
                 zoom: [
                     [-69.5300, -3.7200], // southwestern corner of the bounds
                     [-57.0900, 6.8500] // northeastern corner of the bounds
@@ -659,7 +659,7 @@ var PROJECTS = {
         lotes: [
             {
                 name: 'humaita',
-                subtitle: 'Áreas do 54° BIS em Humaitá-AM',
+                subtitle: 'Área do 54° BIS em Humaitá-AM',
                 description: `Elaboração de peças técnicas (Relatório Técnicos, Planilhas de Cálculos, Plantas,
 				Memoriais Descritivos, Monografias dos Marcos implantados, etc); Carga de Dados no Sistema de  Gestão Fundiária INCRA (SIGEF).`,
                 zoom: [
