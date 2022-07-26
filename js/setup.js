@@ -813,9 +813,10 @@ var PROJECTS = {
 		
         ]
     },
-	'pbzpa': {
-        title: ' Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
-        executed: false,
+
+    'pbzpa-fin': {
+        title: 'Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
+        executed: true,
         description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
 		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
 		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
@@ -870,18 +871,7 @@ var PROJECTS = {
                     }
                 ]
             },
-			
-        ]
-    },
-
-    'pbzpa-fin': {
-        title: 'Plano Básico de Zona de Proteção de Aeródromo (PBZPA)',
-        executed: true,
-        description: `OBJETIVO: Execução do Levantamento Topográfico Planialtimétrico da pista e de obstáculos, assim como confecção de documentação
-		técnica, referentes a homologação e aos Planos Básicos de Zonas de Proteção de Aeródromos (PBZPA) que possibilitem a regularização junto à Aeronáutica
-		dos aeródromos localizados em áreas de responsabilidade do Comando Militar da Amazônia.`,
-        lotes: [
-            {
+			{
                 name: '3pef-8bis',
                 subtitle: 'SWJP – Pista de pouso do 3º PEF do 8º BIS (Vila Bittencourt – AM)',
                 description: `Perfil Longitudinal do eixo da pista, Ortomosaico da pista, Confecção do Anexos e Elaboração de Plantas PBZPA.`,
